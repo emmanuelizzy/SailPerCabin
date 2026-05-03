@@ -1,7 +1,15 @@
 
+import ScrollToTop from './classes/ScrollToTop';
+
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.querySelector('.spc-x');
     if (!root) return;
+
+    const scrollToTop = new ScrollToTop({
+        root,
+        threshold: 200
+    });
+    scrollToTop.init();
 
     // =========================================================
     // Add body class for WordPress header overlay styling
