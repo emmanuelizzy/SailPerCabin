@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = root.querySelector('.hero-bg video');
     const source = video ? video.querySelector('source') : null;
 
-    const DESKTOP_VIDEO = 'https://sailpercabin.com/wp-content/uploads/2026/04/Background-video-SPC-2.0.mp4';
-    const MOBILE_VIDEO = 'https://sailpercabin.com/wp-content/uploads/2026/04/9.16-Export.mp4';
-    const MOBILE_POSTER = 'REPLACE_WITH_MOBILE_STATIC_IMAGE_URL';
+    const DESKTOP_VIDEO = 'assets/media/vid/hero-background.mp4';
+    const MOBILE_VIDEO = 'assets/media/vid/hero-background-mobile.mp4';
+    const MOBILE_POSTER = 'assets/media/hero-background-poster.webp';
 
     if (video && source) {
         const setSourceForViewport = () => {

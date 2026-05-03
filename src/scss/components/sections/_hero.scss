@@ -90,7 +90,7 @@
             }
 
             @include mq.media('<=920px') {
-                background-image: url('https://drive.google.com/thumbnail?id=1fql6qqkn4jkbDDtgggan4KbS4CIVOQsX&sz=w1400');
+                background-image: url('../media/hero-background-poster.webp');
                 background-size: cover;
                 background-position: center center;
                 background-color: var(--navy);
