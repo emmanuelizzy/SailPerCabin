@@ -726,7 +726,7 @@ body.spc-page-overlay-header .site-main > *:first-child {
      object-fit: cover;
   pointer-events: none;
 }
-.spc-x .hero-bg video::-webkit-media-controls, .spc-x .hero-bg video::-webkit-media-controls-panel, .spc-x .hero-bg video::-webkit-media-controls-play-button, .spc-x .hero-bg video::-webkit-media-controls-start-playback-button, .spc-x .hero-bg video::-webkit-media-controls-enclosure, .spc-x .hero-bg video::-internal-media-controls-overlay-cast-button, .spc-x .hero-bg video::-webkit-media-controls-fullscreen-button, .spc-x .hero-bg video::-webkit-media-controls-mute-button, .spc-x .hero-bg video::-webkit-media-controls-timeline, .spc-x .hero-bg video::-webkit-media-controls-current-time-display, .spc-x .hero-bg video::-webkit-media-controls-time-remaining-display, .spc-x .hero-bg video::-webkit-media-controls-volume-slider {
+.spc-x .hero-bg video::-webkit-media-controls, .spc-x .hero-bg video::-webkit-media-controls-panel, .spc-x .hero-bg video::-webkit-media-controls-play-button, .spc-x .hero-bg video::-webkit-media-controls-start-playback-button, .spc-x .hero-bg video::-webkit-media-controls-enclosure, .spc-x .hero-bg video::-webkit-media-controls-fullscreen-button, .spc-x .hero-bg video::-webkit-media-controls-mute-button, .spc-x .hero-bg video::-webkit-media-controls-timeline, .spc-x .hero-bg video::-webkit-media-controls-current-time-display, .spc-x .hero-bg video::-webkit-media-controls-time-remaining-display, .spc-x .hero-bg video::-webkit-media-controls-volume-slider {
   display: none !important;
 }
 .spc-x .hero-bg::after {
