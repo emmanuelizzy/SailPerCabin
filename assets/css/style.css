@@ -499,86 +499,6 @@ template {
   transition: transform 0.25s ease;
 }
 /* =========================================================
-   WORDPRESS / ELEMENTOR COMPATIBILITY OVERRIDES
-   ========================================================= */
-body.spc-page-overlay-header footer,
-body.spc-page-overlay-header .site-footer,
-body.spc-page-overlay-header [data-elementor-type=footer] {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: normal;
-}
-body.spc-page-overlay-header footer *,
-body.spc-page-overlay-header .site-footer *,
-body.spc-page-overlay-header [data-elementor-type=footer] * {
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-body.spc-page-overlay-header header,
-body.spc-page-overlay-header .site-header,
-body.spc-page-overlay-header #masthead,
-body.spc-page-overlay-header .main-header,
-body.spc-page-overlay-header .header-main,
-body.spc-page-overlay-header [data-elementor-type=header],
-body.spc-page-overlay-header .elementor-location-header {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background: transparent !important;
-  background-color: transparent !important;
-  z-index: 50;
-}
-body.spc-page-overlay-header header *,
-body.spc-page-overlay-header .site-header *,
-body.spc-page-overlay-header #masthead *,
-body.spc-page-overlay-header .main-header *,
-body.spc-page-overlay-header [data-elementor-type=header] *,
-body.spc-page-overlay-header .elementor-location-header * {
-  background-color: transparent !important;
-}
-body.spc-page-overlay-header .spc-x .hero {
-  margin-top: -110px;
-  padding-top: 280px;
-  min-height: 880px;
-}
-body.spc-page-overlay-header .elementor-section:first-of-type,
-body.spc-page-overlay-header .elementor-container:first-of-type,
-body.spc-page-overlay-header .e-con:first-of-type,
-body.spc-page-overlay-header main > *:first-child,
-body.spc-page-overlay-header #content > *:first-child,
-body.spc-page-overlay-header .site-main > *:first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-@media (max-width: 920px) {
-  body.spc-page-overlay-header header,
-  body.spc-page-overlay-header .site-header,
-  body.spc-page-overlay-header #masthead,
-  body.spc-page-overlay-header .main-header,
-  body.spc-page-overlay-header .header-main,
-  body.spc-page-overlay-header [data-elementor-type=header],
-  body.spc-page-overlay-header .elementor-location-header {
-    position: relative !important;
-    background: var(--navy) !important;
-  }
-  body.spc-page-overlay-header header *,
-  body.spc-page-overlay-header .site-header *,
-  body.spc-page-overlay-header #masthead *,
-  body.spc-page-overlay-header .main-header *,
-  body.spc-page-overlay-header [data-elementor-type=header] *,
-  body.spc-page-overlay-header .elementor-location-header * {
-    background-color: transparent !important;
-  }
-  body.spc-page-overlay-header .spc-x .hero {
-    margin-top: 0;
-    padding-top: 60px;
-    min-height: auto;
-  }
-}
-/* =========================================================
    ANIMATIONS & TRANSITIONS
    ========================================================= */
 .spc-x .reveal {
@@ -1129,6 +1049,14 @@ body.spc-page-overlay-header .site-main > *:first-child {
 .spc-x .day-media {
   position: relative;
   height: 560px;
+}
+@media (min-width: 921px) and (max-width: 1024px) {
+  .spc-x .day-media {
+    aspect-ratio: 1/1;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 450px;
+  }
 }
 @media (max-width: 920px) {
   .spc-x .day-media {

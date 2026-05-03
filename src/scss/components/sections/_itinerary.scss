@@ -233,6 +233,13 @@
             position: relative;
             height: 560px;
 
+            @include mq.media('>920px', '<=1024px') {
+                aspect-ratio: 1/1;
+                max-width: 100%;
+                margin: 0 auto;
+                height: 450px;
+            }
+
             @include mq.media('<=920px') {
                 aspect-ratio: 1/1;
                 max-width: 100%;
