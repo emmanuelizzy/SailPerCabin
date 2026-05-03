@@ -15,6 +15,10 @@
         align-items: flex-end;
         padding: 60px 0 70px;
 
+        margin-top: -60px;
+        padding-top: 280px;
+        min-height: 880px;
+
         .wrap {
             position: relative;
             z-index: 2;
@@ -41,6 +45,10 @@
             height: auto;
             min-height: 640px;
             padding: 80px 24px 50px;
+
+            margin-top: 0;
+            padding-top: 60px;
+            min-height: auto;
         }
 
         @include mq.media('<=599px') {

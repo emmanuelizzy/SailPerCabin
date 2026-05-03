@@ -1,7 +1,7 @@
 {
-    "name": "g-pirker",
+    "name": "sail-per-carbin",
     "version": "1.0.0",
-    "description": "G. Pirker HTML website setup by Isabel Kolawole",
+    "description": "Book a private cabin on a fully crewed luxury catamaran through the British Virgin Islands.",
     "scripts": {
         "dev": "npx gulp watch",
         "production": "npx gulp production"

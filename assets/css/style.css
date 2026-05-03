@@ -592,6 +592,9 @@ template {
   display: flex;
   align-items: flex-end;
   padding: 60px 0 70px;
+  margin-top: -60px;
+  padding-top: 280px;
+  min-height: 880px;
 }
 .spc-x .hero .wrap {
   position: relative;
@@ -617,6 +620,9 @@ template {
     height: auto;
     min-height: 640px;
     padding: 80px 24px 50px;
+    margin-top: 0;
+    padding-top: 60px;
+    min-height: auto;
   }
 }
 @media (max-width: 599px) {
