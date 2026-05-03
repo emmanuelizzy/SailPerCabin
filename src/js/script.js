@@ -24,16 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const DESKTOP_VIDEO = 'assets/media/vid/hero-background.mp4';
     const MOBILE_VIDEO = 'assets/media/vid/hero-background-mobile.mp4';
-    const MOBILE_POSTER = 'assets/media/hero-background-poster.webp';
+    const DESKTOP_POSTER = 'assets/media/hero-background-poster.webp';
+    const MOBILE_POSTER = 'assets/media/hero-background-poster-mobile.webp';
 
     if (video && source) {
-        const setSourceForViewport = () => {
-            const isMobile = window.innerWidth <= 920;
-            const newSrc = isMobile ? MOBILE_VIDEO : DESKTOP_VIDEO;
+        const viewportQuery = window.matchMedia('(max-width: 920px)');
 
-            // Set mobile poster if available (not placeholder)
-            if (isMobile && MOBILE_POSTER && !MOBILE_POSTER.includes('REPLACE_')) {
-                video.setAttribute('poster', MOBILE_POSTER);
+        const setSourceForViewport = (isMobile) => {
+            const newSrc = isMobile ? MOBILE_VIDEO : DESKTOP_VIDEO;
+            const newPoster = isMobile ? MOBILE_POSTER : DESKTOP_POSTER;
+
+            // Set a matching poster for each viewport to minimize visual jump before playback starts.
+            if (newPoster && !newPoster.includes('REPLACE_') && video.getAttribute('poster') !== newPoster) {
+                video.setAttribute('poster', newPoster);
             }
 
             // Skip if mobile URL is still placeholder
@@ -50,7 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        setSourceForViewport();
+        setSourceForViewport(viewportQuery.matches);
+
+        const onViewportChange = (event) => {
+            setSourceForViewport(event.matches);
+        };
+
+        if (viewportQuery.addEventListener) {
+            viewportQuery.addEventListener('change', onViewportChange);
+        } else if (viewportQuery.addListener) {
+            viewportQuery.addListener(onViewportChange);
+        }
     }
 
     // =========================================================

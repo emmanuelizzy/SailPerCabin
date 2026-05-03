@@ -139,15 +139,17 @@ document.addEventListener('DOMContentLoaded', function () {
   var source = video ? video.querySelector('source') : null;
   var DESKTOP_VIDEO = 'assets/media/vid/hero-background.mp4';
   var MOBILE_VIDEO = 'assets/media/vid/hero-background-mobile.mp4';
-  var MOBILE_POSTER = 'assets/media/hero-background-poster.webp';
+  var DESKTOP_POSTER = 'assets/media/hero-background-poster.webp';
+  var MOBILE_POSTER = 'assets/media/hero-background-poster-mobile.webp';
   if (video && source) {
-    var setSourceForViewport = function setSourceForViewport() {
-      var isMobile = window.innerWidth <= 920;
+    var viewportQuery = window.matchMedia('(max-width: 920px)');
+    var setSourceForViewport = function setSourceForViewport(isMobile) {
       var newSrc = isMobile ? MOBILE_VIDEO : DESKTOP_VIDEO;
+      var newPoster = isMobile ? MOBILE_POSTER : DESKTOP_POSTER;
 
-      // Set mobile poster if available (not placeholder)
-      if (isMobile && MOBILE_POSTER && !MOBILE_POSTER.includes('REPLACE_')) {
-        video.setAttribute('poster', MOBILE_POSTER);
+      // Set a matching poster for each viewport to minimize visual jump before playback starts.
+      if (newPoster && !newPoster.includes('REPLACE_') && video.getAttribute('poster') !== newPoster) {
+        video.setAttribute('poster', newPoster);
       }
 
       // Skip if mobile URL is still placeholder
@@ -163,7 +165,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     };
-    setSourceForViewport();
+    setSourceForViewport(viewportQuery.matches);
+    var onViewportChange = function onViewportChange(event) {
+      setSourceForViewport(event.matches);
+    };
+    if (viewportQuery.addEventListener) {
+      viewportQuery.addEventListener('change', onViewportChange);
+    } else if (viewportQuery.addListener) {
+      viewportQuery.addListener(onViewportChange);
+    }
   }
 
   // =========================================================

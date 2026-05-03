@@ -699,6 +699,11 @@ body.spc-page-overlay-header .site-main > *:first-child {
     padding: 80px 24px 50px;
   }
 }
+@media (max-width: 599px) {
+  .spc-x .hero {
+    padding-inline: 0;
+  }
+}
 .spc-x .hero-bg {
   position: absolute;
   top: 0;
@@ -922,6 +927,11 @@ body.spc-page-overlay-header .site-main > *:first-child {
   background: #fff;
   position: relative;
 }
+@media (max-width: 599px) {
+  .spc-x .itinerary {
+    padding-top: 0px;
+  }
+}
 .spc-x .itinerary .wrap {
   position: relative;
 }
@@ -958,11 +968,16 @@ body.spc-page-overlay-header .site-main > *:first-child {
   position: relative;
   z-index: 1;
 }
-.spc-x .day:nth-child(even) .day-media {
+.spc-x .day:nth-child(odd) .day-media {
   order: 2;
 }
-.spc-x .day:nth-child(even) .day-text {
+.spc-x .day:nth-child(odd) .day-text {
   order: 1;
+}
+@media (max-width: 920px) {
+  .spc-x .day:nth-child(even) .day-text {
+    order: 1;
+  }
 }
 .spc-x .day::before {
   content: "";
@@ -978,6 +993,11 @@ body.spc-page-overlay-header .site-main > *:first-child {
   transform: translateX(-50%);
   z-index: 2;
 }
+@media (max-width: 920px) {
+  .spc-x .day::before {
+    display: none;
+  }
+}
 .spc-x .day::after {
   content: "";
   position: absolute;
@@ -989,6 +1009,11 @@ body.spc-page-overlay-header .site-main > *:first-child {
   background: var(--coral);
   transform: translateX(-50%);
   z-index: 3;
+}
+@media (max-width: 920px) {
+  .spc-x .day::after {
+    display: none;
+  }
 }
 .spc-x .day h3 {
   margin-bottom: 22px;
@@ -1005,7 +1030,7 @@ body.spc-page-overlay-header .site-main > *:first-child {
     gap: 48px;
     padding: 48px 0 48px 32px;
   }
-  .spc-x .day:nth-child(even) .day-media {
+  .spc-x .day:nth-child(even) .day-media, .spc-x .day:nth-child(odd) .day-media {
     order: 0;
   }
   .spc-x .day::before {
@@ -1017,6 +1042,11 @@ body.spc-page-overlay-header .site-main > *:first-child {
     left: 18px;
     top: 46px;
     transform: none;
+  }
+}
+@media (max-width: 599px) {
+  .spc-x .day {
+    padding: 0 0 48px;
   }
 }
 .spc-x .day-num {
@@ -1099,11 +1129,16 @@ body.spc-page-overlay-header .site-main > *:first-child {
 }
 @media (max-width: 920px) {
   .spc-x .day-media {
-    height: auto;
     aspect-ratio: 1/1;
     max-width: 100%;
     margin: 0 auto;
     position: relative;
+  }
+}
+@media (max-width: 599px) {
+  .spc-x .day-media {
+    height: auto;
+    width: 100%;
   }
 }
 .spc-x .media-circle {

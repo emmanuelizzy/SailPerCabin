@@ -43,6 +43,10 @@
             padding: 80px 24px 50px;
         }
 
+        @include mq.media('<=599px') {
+            padding-inline: 0;
+        }
+
         &-bg {
             position: absolute;
             top: 0;
