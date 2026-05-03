@@ -1,6 +1,6 @@
 {
     "name": "sail-per-carbin",
-    "version": "1.0.2",
+    "version": "1.0.0",
     "outputFilename": "sail-per-carbin.zip",
     "files": [
         "index.html"
