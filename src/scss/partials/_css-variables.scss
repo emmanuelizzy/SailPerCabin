@@ -1,0 +1,20 @@
+:root {
+    --teal: #2CCDD0;
+    --teal-deep: #1FA9AC;
+    --coral: #FF6F61;
+    --coral-soft: #FFB4A8;
+    --navy: #0E1B2C;
+    --ink: #1A2B3F;
+    --sand: #F4E3C1;
+    --sand-soft: #FBF3E2;
+    --cream: #FDF8EE;
+    --paper: #FFFFFF;
+    --muted: #5C6B7E;
+    --line: rgba(14, 27, 44, .10);
+    --grad-warm: linear-gradient(135deg, #2CCDD0 0%, #FFB4A8 55%, #FF6F61 100%);
+    --grad-mist: radial-gradient(120% 80% at 50% 0%, rgba(44, 205, 208, .18) 0%, rgba(255, 111, 97, .10) 40%, rgba(255, 255, 255, 0) 75%);
+    --shadow-sm: 0 1px 2px rgba(14, 27, 44, .06), 0 4px 16px rgba(14, 27, 44, .05);
+    --shadow-md: 0 8px 24px rgba(14, 27, 44, .08), 0 24px 60px rgba(14, 27, 44, .10);
+    --font-family-base: 'iowan-old', Georgia, 'Times New Roman', serif;
+    --font-family-alt: 'Grift', sans-serif;
+}

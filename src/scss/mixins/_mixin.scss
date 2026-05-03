@@ -1,0 +1,73 @@
+@use "../partials/variables" as va;
+
+@mixin regularTextStyling($fsize:va.$fontSize, $lheight:va.$lineHeight, $fweight:normal, $fontFamily:va.$fontFamily) {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: $fweight;
+    font-size: $fsize;
+    line-height: $lheight;
+}
+
+@mixin iconGradientColor($startColor:#EFDBFF, $midColor:#D3ADF7, $endColor:#B37FEB) {
+    background: linear-gradient(180deg, $startColor 0%, $midColor 51.56%, $endColor 100%);
+}
+
+@mixin loadTransition($easing:ease-in-out) {
+    transition: .2s ease-in-out;
+}
+
+@mixin loadTransitionAll($easing:ease-in-out) {
+    transition: all .2s #{$easing};
+}
+
+@mixin addTransitionFor($for, $duration:.2s, $easing:ease-in-out) {
+    transition: #{$for} #{$duration} #{$easing};
+}
+
+@mixin displayFlex( $alignItems:center, $justifyContent:center) {
+    display: flex;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+@mixin generateSpacingAttr($type:padding, $direction:left, $value:10) {
+    #{$type}-#{$direction}:#{$value}px;
+}
+
+@mixin generateBorderAttr($type:border, $width:1px, $style:solid, $color:$gray7Color) {
+    #{$type}:#{$width} #{$style} #{$color};
+}
+
+@mixin resetListStyle {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin calculateHeight($init, $final, $operator) {
+    height: calc(#{$init} #{$operator} #{$final});
+}
+
+@mixin removeOutline {
+    outline: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+@mixin widthMaxWidth($width:100%, $maxWidth: 100%) {
+    width: $width;
+    max-width: $maxWidth;
+}
+
+@mixin generalButtonStyling($bgColor:$buttonRedColor) {
+    background: $bgColor;
+    border-radius: 8px;
+    padding: 13px 20px;
+    @include regularTextStyling();
+    color: $whiteColor;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    @include addTransitionFor(background)
+}

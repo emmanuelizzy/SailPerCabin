@@ -1,0 +1,137 @@
+@use '@scss/partials/mediaquery' as mq;
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.spc-x {
+    .hero {
+        position: relative;
+        height: 92vh;
+        min-height: 680px;
+        overflow: hidden;
+        color: #fff;
+        display: flex;
+        align-items: flex-end;
+        padding: 60px 0 70px;
+
+        .wrap {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            letter-spacing: -.015em;
+            margin: 18px 0 28px;
+            max-width: 14ch;
+            color: #fff;
+            font-weight: 500;
+
+            em {
+                font-style: italic;
+                color: var(--coral-soft);
+                font-weight: 500;
+            }
+        }
+
+        @include mq.media('<=920px') {
+            height: auto;
+            min-height: 640px;
+            padding: 80px 24px 50px;
+        }
+
+        &-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+
+            video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                transform: translate(-50%, -50%) scale(1.15);
+                transform-origin: center center;
+                object-fit: cover;
+                pointer-events: none;
+
+                &::-webkit-media-controls,
+                &::-webkit-media-controls-panel,
+                &::-webkit-media-controls-play-button,
+                &::-webkit-media-controls-start-playback-button,
+                &::-webkit-media-controls-enclosure,
+                &::-internal-media-controls-overlay-cast-button,
+                &::-webkit-media-controls-fullscreen-button,
+                &::-webkit-media-controls-mute-button,
+                &::-webkit-media-controls-timeline,
+                &::-webkit-media-controls-current-time-display,
+                &::-webkit-media-controls-time-remaining-display,
+                &::-webkit-media-controls-volume-slider {
+                    display: none !important;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, rgba(14, 27, 44, .25) 0%, rgba(14, 27, 44, .10) 35%, rgba(14, 27, 44, .55) 100%);
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            @include mq.media('<=920px') {
+                background-image: url('https://drive.google.com/thumbnail?id=1fql6qqkn4jkbDDtgggan4KbS4CIVOQsX&sz=w1400');
+                background-size: cover;
+                background-position: center center;
+                background-color: var(--navy);
+
+                video {
+                    display: block !important;
+                    transform: translate(-50%, -50%) scale(1.05);
+                }
+            }
+        }
+
+        &-meta {
+            margin-top: 60px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, .25);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 920px;
+
+            dt {
+                font-family: var(--font-family-alt);
+                font-size: 11px;
+                font-weight: 500;
+                letter-spacing: .24em;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, .7);
+                margin-bottom: 6px;
+            }
+
+            dd {
+                margin: 0;
+                font-family: var(--font-family-base);
+                font-size: 18px;
+                color: #fff;
+            }
+
+            @include mq.media('<=920px') {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+            }
+        }
+    }
+}

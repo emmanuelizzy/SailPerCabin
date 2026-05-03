@@ -1,0 +1,97 @@
+@use '@scss/partials/mediaquery' as mq;
+
+/* =========================================================
+   WORDPRESS / ELEMENTOR COMPATIBILITY OVERRIDES
+   ========================================================= */
+
+body.spc-page-overlay-header {
+    footer,
+    .site-footer,
+    [data-elementor-type="footer"] {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: normal;
+    }
+
+    footer *,
+    .site-footer *,
+    [data-elementor-type="footer"] * {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    header,
+    .site-header,
+    #masthead,
+    .main-header,
+    .header-main,
+    [data-elementor-type="header"],
+    .elementor-location-header {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: transparent !important;
+        background-color: transparent !important;
+        z-index: 50;
+    }
+
+    header *,
+    .site-header *,
+    #masthead *,
+    .main-header *,
+    [data-elementor-type="header"] *,
+    .elementor-location-header * {
+        background-color: transparent !important;
+    }
+
+    .spc-x {
+        .hero {
+            margin-top: -110px;
+            padding-top: 280px;
+            min-height: 880px;
+        }
+    }
+
+    .elementor-section:first-of-type,
+    .elementor-container:first-of-type,
+    .e-con:first-of-type,
+    main > *:first-child,
+    #content > *:first-child,
+    .site-main > *:first-child {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    @include mq.media('<=920px') {
+        header,
+        .site-header,
+        #masthead,
+        .main-header,
+        .header-main,
+        [data-elementor-type="header"],
+        .elementor-location-header {
+            position: relative !important;
+            background: var(--navy) !important;
+        }
+
+        header *,
+        .site-header *,
+        #masthead *,
+        .main-header *,
+        [data-elementor-type="header"] *,
+        .elementor-location-header * {
+            background-color: transparent !important;
+        }
+
+        .spc-x {
+            .hero {
+                margin-top: 0;
+                padding-top: 60px;
+                min-height: auto;
+            }
+        }
+    }
+}

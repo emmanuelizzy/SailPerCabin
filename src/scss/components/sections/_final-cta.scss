@@ -1,0 +1,53 @@
+@use '@scss/partials/mediaquery' as mq;
+
+/* =========================================================
+   FINAL CTA SECTION
+   ========================================================= */
+
+.spc-x {
+    .final-cta {
+        text-align: center;
+        padding: 160px 0 140px;
+        background: #fff;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(60% 50% at 50% 80%, rgba(44, 205, 208, .10) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+
+        .wrap {
+            position: relative;
+        }
+
+        h2 {
+            font-size: clamp(48px, 6.5vw, 92px);
+            line-height: 1.05;
+            max-width: 14ch;
+            margin: 18px auto 28px;
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 54ch;
+            margin: 0 auto 44px;
+        }
+
+        .ctas {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @include mq.media('<=920px') {
+            padding: 80px 0;
+        }
+    }
+}

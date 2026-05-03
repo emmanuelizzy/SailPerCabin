@@ -1,0 +1,18 @@
+@use "sass:meta";
+@use '@scss/partials/mediaquery' as mq;
+
+@include meta.load-css('./partials/_css-variables.scss');
+
+@include meta.load-css('./partials/_globalimport.scss');
+@include meta.load-css('./partials/_normalize.scss');
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+@include meta.load-css('./components/utils/_utils.scss');
+
+@include meta.load-css('./components/layout/_all.scss');
+@include meta.load-css('./components/sections/_all.scss');

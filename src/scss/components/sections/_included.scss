@@ -1,0 +1,100 @@
+@use '@scss/partials/mediaquery' as mq;
+
+/* =========================================================
+   INCLUDED SECTION
+   ========================================================= */
+
+.spc-x {
+    .included {
+        padding: 140px 0;
+        background: var(--navy);
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(60% 50% at 80% 20%, rgba(44, 205, 208, .18) 0%, rgba(0, 0, 0, 0) 60%),
+                        radial-gradient(50% 40% at 10% 90%, rgba(255, 111, 97, .16) 0%, rgba(0, 0, 0, 0) 60%);
+            pointer-events: none;
+        }
+
+        .wrap {
+            position: relative;
+        }
+
+        .section-head {
+            h2 {
+                color: #fff;
+
+                em {
+                    font-style: italic;
+                    color: var(--teal);
+                    font-weight: 400;
+                }
+            }
+
+            .eyebrow {
+                color: var(--coral-soft);
+            }
+
+            p {
+                color: rgba(255, 255, 255, .78);
+            }
+        }
+
+        .col-list {
+            li {
+                padding: 18px 0;
+                border-top: 1px solid rgba(255, 255, 255, .12);
+                display: grid;
+                grid-template-columns: 24px 1fr;
+                gap: 14px;
+                align-items: start;
+                font-family: var(--font-family-base);
+                font-size: 16.5px;
+                color: rgba(255, 255, 255, .92);
+                line-height: 1.5;
+
+                &:last-child {
+                    border-bottom: 1px solid rgba(255, 255, 255, .12);
+                }
+            }
+
+            .mark {
+                font-family: var(--font-family-alt);
+                color: var(--coral);
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 1.4;
+            }
+        }
+
+        .footnote {
+            text-align: center;
+            margin-top: 60px;
+            font-family: var(--font-family-base);
+            font-style: italic;
+            color: rgba(255, 255, 255, .65);
+            font-size: 15px;
+        }
+
+        @include mq.media('<=920px') {
+            padding: 80px 0;
+        }
+
+        &-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+
+            @include mq.media('<=920px') {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+    }
+}

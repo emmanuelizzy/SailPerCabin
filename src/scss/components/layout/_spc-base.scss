@@ -1,0 +1,29 @@
+/* =========================================================
+   SAIL PER CABIN — BASE SCOPE & CSS VARIABLES
+   ========================================================= */
+
+.spc-x {
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    > section {
+        width: 100vw;
+        position: relative;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 140px;
+        }
+    }
+}

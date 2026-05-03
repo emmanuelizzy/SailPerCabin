@@ -1,0 +1,11 @@
+{
+    "name": "sail-per-carbin",
+    "version": "1.0.0",
+    "outputFilename": "sail-per-carbin.zip",
+    "files": [
+        "index.html"
+    ],
+    "directories": [
+        "assets/**/*"
+    ]
+}

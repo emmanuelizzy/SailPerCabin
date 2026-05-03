@@ -1,0 +1,265 @@
+@use '@scss/partials/mediaquery' as mq;
+
+/* =========================================================
+   ITINERARY SECTION
+   ========================================================= */
+
+.spc-x {
+    .itinerary {
+        padding: 60px 0 100px;
+        background: #fff;
+        position: relative;
+
+        .wrap {
+            position: relative;
+        }
+    }
+
+    .journey-path {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        transform: translateX(-50%);
+        z-index: 0;
+        pointer-events: none;
+        overflow: visible;
+
+        path {
+            fill: none;
+            stroke: var(--coral);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-dasharray: 2 10;
+            opacity: .55;
+        }
+
+        @include mq.media('<=920px') {
+            display: none;
+        }
+    }
+
+    .day {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        padding: 80px 0;
+        position: relative;
+        z-index: 1;
+
+        &:nth-child(even) {
+            .day-media {
+                order: 2;
+            }
+
+            .day-text {
+                order: 1;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 140px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--coral);
+            box-shadow: 0 0 0 6px #fff, 0 4px 14px rgba(255, 111, 97, .25);
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 146px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--coral);
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        h3 {
+            margin-bottom: 22px;
+            max-width: 18ch;
+
+            em {
+                font-style: italic;
+                color: var(--teal-deep);
+                font-weight: 400;
+            }
+        }
+
+        @include mq.media('<=920px') {
+            grid-template-columns: 1fr;
+            gap: 48px;
+            padding: 48px 0 48px 32px;
+
+            &:nth-child(even) .day-media {
+                order: 0;
+            }
+
+            &::before {
+                left: 16px;
+                top: 40px;
+                transform: none;
+            }
+
+            &::after {
+                left: 18px;
+                top: 46px;
+                transform: none;
+            }
+        }
+
+        &-num {
+            font-family: var(--font-family-base);
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(80px, 9vw, 128px);
+            line-height: 1;
+            background: var(--grad-warm);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 24px;
+        }
+
+        &-tag {
+            font-family: var(--font-family-alt);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        &-text {
+            p {
+                font-size: 17px;
+                color: var(--ink);
+                max-width: 48ch;
+                line-height: 1.65;
+            }
+        }
+
+        &-list {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+
+            li {
+                font-family: var(--font-family-base);
+                font-style: italic;
+                font-size: 17px;
+                color: var(--ink);
+                padding-left: 30px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 13px;
+                    width: 18px;
+                    height: 1.5px;
+                    background: var(--coral);
+                }
+            }
+        }
+
+        &-fact {
+            margin-top: 36px;
+            padding: 18px 22px;
+            border-left: 2px solid var(--teal);
+            background: var(--cream);
+            font-family: var(--font-family-base);
+            font-size: 15px;
+            color: var(--muted);
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+
+            strong {
+                display: block;
+                font-style: normal;
+                font-family: var(--font-family-alt);
+                font-size: 11px;
+                letter-spacing: .22em;
+                text-transform: uppercase;
+                color: var(--coral);
+                margin-bottom: 6px;
+                font-weight: 500;
+            }
+        }
+
+        &-media {
+            position: relative;
+            height: 560px;
+
+            @include mq.media('<=920px') {
+                height: auto;
+                aspect-ratio: 1/1;
+                max-width: 100%;
+                margin: 0 auto;
+                position: relative;
+            }
+        }
+    }
+
+    .media-circle {
+        position: absolute;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include mq.media('<=920px') {
+            aspect-ratio: 1/1;
+        }
+    }
+
+    .media-a {
+        width: 78%;
+        height: 78%;
+        top: 0;
+        right: 0;
+
+        @include mq.media('<=920px') {
+            width: 75%;
+            height: auto;
+            aspect-ratio: 1/1;
+        }
+    }
+
+    .media-b {
+        width: 42%;
+        height: 42%;
+        bottom: 0;
+        left: 0;
+        border: 6px solid #fff;
+
+        @include mq.media('<=920px') {
+            width: 42%;
+            height: auto;
+            aspect-ratio: 1/1;
+            border: 5px solid #fff;
+        }
+    }
+}

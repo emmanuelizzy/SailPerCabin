@@ -1,0 +1,81 @@
+@use '@scss/partials/mediaquery' as mq;
+
+/* =========================================================
+   FIT SECTION
+   ========================================================= */
+
+.spc-x {
+    .fit {
+        background: linear-gradient(180deg, var(--sand-soft) 0%, var(--cream) 100%);
+        padding: 140px 0;
+
+        @include mq.media('<=920px') {
+            padding: 80px 0;
+        }
+
+        &-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 60px;
+
+            @include mq.media('<=920px') {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        &-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 48px 44px;
+            box-shadow: var(--shadow-sm);
+
+            h4 {
+                font-family: var(--font-family-alt);
+                font-size: 18px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                margin: 0 0 32px;
+
+                &::before {
+                    content: "";
+                    width: 28px;
+                    height: 2px;
+                    background: var(--teal);
+                    display: inline-block;
+                }
+            }
+
+            &.no h4::before {
+                background: var(--coral);
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                padding: 18px 0;
+                border-top: 1px solid var(--line);
+                font-family: var(--font-family-base);
+                font-size: 16.5px;
+                color: var(--ink);
+                line-height: 1.5;
+
+                &:first-child {
+                    border-top: 0;
+                    padding-top: 0;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
