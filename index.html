@@ -6,8 +6,7 @@
     <title>Sail Per Cabin - The Experience</title>
     <meta name="description" content="Book a private cabin on a fully crewed luxury catamaran through the British Virgin Islands. Seven nights, all-inclusive, per-cabin sailing — without chartering the whole boat.">
 
-    <link rel="preload" as="video" href="./assets/media/vid/hero-background.mp4" type="video/mp4">
-    <link rel="preload" as="image" href="./assets/media/hero-background-poster.webp">
+    <link rel="preload" as="image" href="./assets/media/hero-background-poster.webp" fetchpriority="high">
 
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <script src="./assets/js/script.min.js" defer></script>
@@ -18,7 +17,7 @@
         <!-- HERO -->
         <section class="hero">
             <div class="hero-bg" aria-hidden="true">
-                <video controlslist="nodownload nofullscreen noremoteplayback noplaybackrate" poster="./assets/media/hero-background-poster.webp" preload="auto" x-webkit-airplay="deny" autoplay disablepictureinpicture disableremoteplayback loop muted playsinline>
+                <video controlslist="nodownload nofullscreen noremoteplayback noplaybackrate" poster="./assets/media/hero-background-poster.webp" preload="metadata" x-webkit-airplay="deny" autoplay disablepictureinpicture disableremoteplayback loop muted playsinline>
                     <source src="./assets/media/vid/hero-background.mp4" type="video/mp4">
                 </video>
             </div>
@@ -61,7 +60,7 @@
                             <div class="pillar"><div class="pillar-num">03</div><div><h3>Effortless throughout</h3><p>No sailing experience required. No need to organise a full group. Show up. Step aboard. The rest is handled.</p></div></div>
                         </div>
                     </div>
-                    <div class="frame"><picture><source srcset="./assets/media/baths-virgin-gorda.webp" type="image/webp"><img src="./assets/media/baths-virgin-gorda.jpg" alt="Per-cabin sailing charter through the British Virgin Islands aboard a luxury crewed catamaran"></picture></div>
+                    <div class="frame"><picture><source srcset="./assets/media/baths-virgin-gorda-768.webp 768w, ./assets/media/baths-virgin-gorda-1100.webp 1100w, ./assets/media/baths-virgin-gorda.webp 1400w" sizes="(max-width: 900px) 92vw, 44vw" type="image/webp"><img src="./assets/media/baths-virgin-gorda.jpg" alt="Per-cabin sailing charter through the British Virgin Islands aboard a luxury crewed catamaran" loading="lazy" decoding="async"></picture></div>
                 </div>
             </div>
         </section>
@@ -92,8 +91,8 @@
                         <div class="day-fact"><strong>Fun fact</strong>Deadman's Bay is named after pirate legends — today, the only thing washing up is you, drink in hand.</div>
                     </div>
                     <div class="day-media">
-                        <div class="media-circle media-a"><picture><source srcset="./assets/media/welcome-aboard-tortola.webp" type="image/webp"><img src="./assets/media/welcome-aboard-tortola.jpg" alt="Welcome aboard a crewed sailing catamaran in Tortola, BVI"></picture></div>
-                        <div class="media-circle media-b"><picture><source srcset="./assets/media/setting-sail-tortola.webp" type="image/webp"><img src="./assets/media/setting-sail-tortola.jpg" alt="Setting sail from Tortola in the British Virgin Islands"></picture></div>
+                        <div class="media-circle media-a"><picture><source srcset="./assets/media/welcome-aboard-tortola-768.webp 768w, ./assets/media/welcome-aboard-tortola-1100.webp 1100w, ./assets/media/welcome-aboard-tortola.webp 1400w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/welcome-aboard-tortola.jpg" alt="Welcome aboard a crewed sailing catamaran in Tortola, BVI" loading="lazy" decoding="async"></picture></div>
+                        <div class="media-circle media-b"><picture><source srcset="./assets/media/setting-sail-tortola.webp" type="image/webp"><img src="./assets/media/setting-sail-tortola.jpg" alt="Setting sail from Tortola in the British Virgin Islands" loading="lazy" decoding="async"></picture></div>
                     </div>
                 </div>
 
@@ -107,8 +106,8 @@
                         <div class="day-fact"><strong>Did you know</strong>Norman Island inspired Treasure Island — and real treasure has been found in these waters.</div>
                     </div>
                     <div class="day-media">
-                        <div class="media-circle media-a"><picture><source srcset="./assets/media/snorkelling-the-indians.webp" type="image/webp"><img src="./assets/media/snorkelling-the-indians.jpg" alt="Snorkelling at The Indians coral gardens in the British Virgin Islands"></picture></div>
-                        <div class="media-circle media-b"><picture><source srcset="./assets/media/the-indians-snorkel-site.webp" type="image/webp"><img src="./assets/media/the-indians-snorkel-site.jpg" alt="The Indians snorkel site near Norman Island, BVI"></picture></div>
+                        <div class="media-circle media-a"><picture><source srcset="./assets/media/snorkelling-the-indians-768.webp 768w, ./assets/media/snorkelling-the-indians-1100.webp 1100w, ./assets/media/snorkelling-the-indians.webp 1400w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/snorkelling-the-indians.jpg" alt="Snorkelling at The Indians coral gardens in the British Virgin Islands" loading="lazy" decoding="async"></picture></div>
+                        <div class="media-circle media-b"><picture><source srcset="./assets/media/the-indians-snorkel-site-768.webp 768w, ./assets/media/the-indians-snorkel-site-1100.webp 1100w, ./assets/media/the-indians-snorkel-site.webp 800w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/the-indians-snorkel-site.jpg" alt="The Indians snorkel site near Norman Island, BVI" loading="lazy" decoding="async"></picture></div>
                     </div>
                 </div>
 
@@ -122,8 +121,8 @@
                         <div class="day-fact"><strong>Fun fact</strong>The Soggy Dollar got its name from guests swimming ashore with cash in their pockets.</div>
                     </div>
                     <div class="day-media">
-                        <div class="media-circle media-a"><picture><source srcset="./assets/media/white-bay-jost-van-dyke.webp" type="image/webp"><img src="./assets/media/white-bay-jost-van-dyke.jpg" alt="White Bay Jost Van Dyke beach in the British Virgin Islands"></picture></div>
-                        <div class="media-circle media-b"><picture><source srcset="./assets/media/beach-bars-jost-van-dyke.webp" type="image/webp"><img src="./assets/media/beach-bars-jost-van-dyke.jpg" alt="Beach bars on Jost Van Dyke, BVI"></picture></div>
+                        <div class="media-circle media-a"><picture><source srcset="./assets/media/white-bay-jost-van-dyke-768.webp 768w, ./assets/media/white-bay-jost-van-dyke-1100.webp 1100w, ./assets/media/white-bay-jost-van-dyke.webp 1400w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/white-bay-jost-van-dyke.jpg" alt="White Bay Jost Van Dyke beach in the British Virgin Islands" loading="lazy" decoding="async"></picture></div>
+                        <div class="media-circle media-b"><picture><source srcset="./assets/media/beach-bars-jost-van-dyke.webp" type="image/webp"><img src="./assets/media/beach-bars-jost-van-dyke.jpg" alt="Beach bars on Jost Van Dyke, BVI" loading="lazy" decoding="async"></picture></div>
                     </div>
                 </div>
 
@@ -137,8 +136,8 @@
                         <div class="day-fact"><strong>Fun fact</strong>Guana Island is a protected nature reserve — its snorkelling is often compared to a natural aquarium.</div>
                     </div>
                     <div class="day-media">
-                        <div class="media-circle media-a"><picture><source srcset="./assets/media/sailing-tortola-north-shore.webp" type="image/webp"><img src="./assets/media/sailing-tortola-north-shore.jpg" alt="Sailing Tortola's north shore in the BVI"></picture></div>
-                        <div class="media-circle media-b"><picture><source srcset="./assets/media/marina-cay-resort-evening.webp" type="image/webp"><img src="./assets/media/marina-cay-resort-evening.jpg" alt="Resort evening on Marina Cay in the British Virgin Islands"></picture></div>
+                        <div class="media-circle media-a"><picture><source srcset="./assets/media/sailing-tortola-north-shore-768.webp 768w, ./assets/media/sailing-tortola-north-shore-1100.webp 1100w, ./assets/media/sailing-tortola-north-shore.webp 1400w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/sailing-tortola-north-shore.jpg" alt="Sailing Tortola's north shore in the BVI" loading="lazy" decoding="async"></picture></div>
+                        <div class="media-circle media-b"><picture><source srcset="./assets/media/marina-cay-resort-evening.webp" type="image/webp"><img src="./assets/media/marina-cay-resort-evening.jpg" alt="Resort evening on Marina Cay in the British Virgin Islands" loading="lazy" decoding="async"></picture></div>
                     </div>
                 </div>
 
@@ -152,8 +151,8 @@
                         <div class="day-fact"><strong>Fun fact</strong>The Baths' granite boulders were formed millions of years ago, sculpted by sea and weather.</div>
                     </div>
                     <div class="day-media">
-                        <div class="media-circle media-a"><picture><source srcset="./assets/media/baths-virgin-gorda.webp" type="image/webp"><img src="./assets/media/baths-virgin-gorda.jpg" alt="The Baths on Virgin Gorda, British Virgin Islands"></picture></div>
-                        <div class="media-circle media-b"><picture><source srcset="./assets/media/sailing-past-the-baths.webp" type="image/webp"><img src="./assets/media/sailing-past-the-baths.jpg" alt="Sailing past The Baths in Virgin Gorda, BVI"></picture></div>
+                        <div class="media-circle media-a"><picture><source srcset="./assets/media/baths-virgin-gorda-768.webp 768w, ./assets/media/baths-virgin-gorda-1100.webp 1100w, ./assets/media/baths-virgin-gorda.webp 1400w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/baths-virgin-gorda.jpg" alt="The Baths on Virgin Gorda, British Virgin Islands" loading="lazy" decoding="async"></picture></div>
+                        <div class="media-circle media-b"><picture><source srcset="./assets/media/sailing-past-the-baths.webp" type="image/webp"><img src="./assets/media/sailing-past-the-baths.jpg" alt="Sailing past The Baths in Virgin Gorda, BVI" loading="lazy" decoding="async"></picture></div>
                     </div>
                 </div>
 
@@ -167,8 +166,8 @@
                         <div class="day-fact"><strong>Fun fact</strong>Anegada means "drowned land" — its highest point is just 8–9 metres above sea level.</div>
                     </div>
                     <div class="day-media">
-                        <div class="media-circle media-a"><picture><source srcset="./assets/media/cow-wreck-beach-anegada.webp" type="image/webp"><img src="./assets/media/cow-wreck-beach-anegada.jpg" alt="Cow Wreck Beach on Anegada, British Virgin Islands"></picture></div>
-                        <div class="media-circle media-b"><picture><source srcset="./assets/media/anegada-coral-atoll.webp" type="image/webp"><img src="./assets/media/anegada-coral-atoll.jpg" alt="Anegada coral atoll in the BVI"></picture></div>
+                        <div class="media-circle media-a"><picture><source srcset="./assets/media/cow-wreck-beach-anegada-768.webp 768w, ./assets/media/cow-wreck-beach-anegada-1100.webp 1100w, ./assets/media/cow-wreck-beach-anegada.webp 1400w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/cow-wreck-beach-anegada.jpg" alt="Cow Wreck Beach on Anegada, British Virgin Islands" loading="lazy" decoding="async"></picture></div>
+                        <div class="media-circle media-b"><picture><source srcset="./assets/media/anegada-coral-atoll.webp" type="image/webp"><img src="./assets/media/anegada-coral-atoll.jpg" alt="Anegada coral atoll in the BVI" loading="lazy" decoding="async"></picture></div>
                     </div>
                 </div>
 
@@ -182,8 +181,8 @@
                         <div class="day-fact"><strong>Fun fact</strong>Cooper Island Beach Club runs a solar-powered microbrewery — one of the most sustainable in the Caribbean.</div>
                     </div>
                     <div class="day-media">
-                        <div class="media-circle media-a"><picture><source srcset="./assets/media/cooper-island.webp" type="image/webp"><img src="./assets/media/cooper-island.jpg" alt="Cooper Island in the British Virgin Islands"></picture></div>
-                        <div class="media-circle media-b"><picture><source srcset="./assets/media/farewell-dinner-bvi-charter.webp" type="image/webp"><img src="./assets/media/farewell-dinner-bvi-charter.jpg" alt="Farewell dinner on a BVI sailing charter"></picture></div>
+                        <div class="media-circle media-a"><picture><source srcset="./assets/media/cooper-island-768.webp 768w, ./assets/media/cooper-island-1100.webp 1100w, ./assets/media/cooper-island.webp 1400w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/cooper-island.jpg" alt="Cooper Island in the British Virgin Islands" loading="lazy" decoding="async"></picture></div>
+                        <div class="media-circle media-b"><picture><source srcset="./assets/media/farewell-dinner-bvi-charter.webp" type="image/webp"><img src="./assets/media/farewell-dinner-bvi-charter.jpg" alt="Farewell dinner on a BVI sailing charter" loading="lazy" decoding="async"></picture></div>
                     </div>
                 </div>
 
@@ -197,8 +196,8 @@
                         <div class="day-fact"><strong>Fun fact</strong>"Fair winds and following seas" is a sailor's farewell — wishing you an easy journey until next time.</div>
                     </div>
                     <div class="day-media">
-                        <div class="media-circle media-a"><picture><source srcset="./assets/media/sailing-back-to-tortola.webp" type="image/webp"><img src="./assets/media/sailing-back-to-tortola.jpg" alt="Sailing back to Tortola at the end of a BVI charter"></picture></div>
-                        <div class="media-circle media-b"><picture><source srcset="./assets/media/group-photo-bvi-charter.webp" type="image/webp"><img src="./assets/media/group-photo-bvi-charter.jpg" alt="Group photo at the end of a per-cabin sailing charter in the BVI"></picture></div>
+                        <div class="media-circle media-a"><picture><source srcset="./assets/media/sailing-back-to-tortola-768.webp 768w, ./assets/media/sailing-back-to-tortola-1100.webp 1100w, ./assets/media/sailing-back-to-tortola.webp 1400w" sizes="(max-width: 900px) 78vw, 32vw" type="image/webp"><img src="./assets/media/sailing-back-to-tortola.jpg" alt="Sailing back to Tortola at the end of a BVI charter" loading="lazy" decoding="async"></picture></div>
+                        <div class="media-circle media-b"><picture><source srcset="./assets/media/group-photo-bvi-charter.webp" type="image/webp"><img src="./assets/media/group-photo-bvi-charter.jpg" alt="Group photo at the end of a per-cabin sailing charter in the BVI" loading="lazy" decoding="async"></picture></div>
                     </div>
                 </div>
             </div>
