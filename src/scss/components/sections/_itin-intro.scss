@@ -10,6 +10,10 @@
         padding: 160px 0 80px;
         background: #fff;
 
+        .eyebrow {
+            color: #c0392b;
+        }
+
         h2 {
             font-size: clamp(40px, 5.4vw, 72px);
             max-width: 18ch;

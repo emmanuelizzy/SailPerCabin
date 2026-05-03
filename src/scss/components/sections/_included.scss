@@ -91,6 +91,14 @@
             gap: 80px;
             margin-top: 60px;
 
+            h3.col-title {
+                font-family: var(--font-family-alt);
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+                margin: 0 0 20px;
+            }
+
             @include mq.media('<=920px') {
                 grid-template-columns: 1fr;
                 gap: 48px;

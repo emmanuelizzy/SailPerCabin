@@ -867,7 +867,7 @@ body.spc-page-overlay-header .site-main > *:first-child {
   color: var(--coral);
   letter-spacing: 0.06em;
 }
-.spc-x .pillar h4 {
+.spc-x .pillar h3 {
   font-family: var(--font-family-alt);
   font-size: 17px;
   font-weight: 700;
@@ -900,6 +900,9 @@ body.spc-page-overlay-header .site-main > *:first-child {
   text-align: center;
   padding: 160px 0 80px;
   background: #fff;
+}
+.spc-x .itin-intro .eyebrow {
+  color: #c0392b;
 }
 .spc-x .itin-intro h2 {
   font-size: clamp(40px, 5.4vw, 72px);
@@ -1261,6 +1264,13 @@ body.spc-page-overlay-header .site-main > *:first-child {
   gap: 80px;
   margin-top: 60px;
 }
+.spc-x .included-grid h3.col-title {
+  font-family: var(--font-family-alt);
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 20px;
+}
 @media (max-width: 920px) {
   .spc-x .included-grid {
     grid-template-columns: 1fr;
@@ -1297,7 +1307,7 @@ body.spc-page-overlay-header .site-main > *:first-child {
   padding: 48px 44px;
   box-shadow: var(--shadow-sm);
 }
-.spc-x .fit-card h4 {
+.spc-x .fit-card h3 {
   font-family: var(--font-family-alt);
   font-size: 18px;
   font-weight: 700;
@@ -1306,14 +1316,14 @@ body.spc-page-overlay-header .site-main > *:first-child {
   gap: 14px;
   margin: 0 0 32px;
 }
-.spc-x .fit-card h4::before {
+.spc-x .fit-card h3::before {
   content: "";
   width: 28px;
   height: 2px;
   background: var(--teal);
   display: inline-block;
 }
-.spc-x .fit-card.no h4::before {
+.spc-x .fit-card.no h3::before {
   background: var(--coral);
 }
 .spc-x .fit-card ul {
