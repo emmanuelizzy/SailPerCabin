@@ -1,0 +1,252 @@
+@use '@scss/partials/mediaquery' as mq;
+
+/* =========================================================
+   HEADER / NAVIGATION
+   ========================================================= */
+
+.spc-x-masthead {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+
+    .wrap {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 28px;
+    }
+
+    .spc-header {
+        &--desktop {
+            .wrap {
+                min-height: var(--header-height);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 32px;
+            }
+
+            @include mq.media('<=1024px') {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            display: none;
+
+            @include mq.media('<=1024px') {
+                display: block;
+
+                .wrap {
+                    min-height: 96px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 18px;
+                }
+            }
+        }
+
+        &__logo-link {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        &__logo {
+            height: 77px;
+            width: auto;
+            display: block;
+
+            &--mobile {
+                height: 65px;
+            }
+        }
+
+        &__nav {
+            margin-left: auto;
+        }
+
+        &__menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            li {
+                padding-top: 0.9em;
+                padding-inline: 0.9em;
+            }
+
+            a {
+                position: relative;
+                display: inline-block;
+                color: #fff;
+                font-family: var(--font-family-alt);
+                font-size: 18px;
+                font-weight: 400;
+                letter-spacing: 0.2px;
+                line-height: 1;
+                padding-bottom: 4px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 1px;
+                    background: #fff;
+                    transform: scaleX(0);
+                    transform-origin: left center;
+                    transition: transform .25s ease;
+                }
+
+                &:hover::after,
+                &:focus-visible::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+
+        &__menu-toggle {
+            appearance: none;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+
+            span {
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: #fff;
+                transform-origin: left center;
+            }
+
+            &:focus-visible {
+                outline: 2px solid #fff;
+                outline-offset: 6px;
+            }
+        }
+    }
+
+    .spc-mobile-nav-backdrop {
+        position: fixed;
+        inset: 0;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background: rgba(0, 0, 0, .45);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+    }
+
+    .spc-mobile-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100dvh;
+        width: min(88vw, 420px);
+        background: rgba(14, 27, 44, .98);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        transform: translateX(100%);
+        transition: transform .3s ease;
+        padding: 34px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &__close {
+            align-self: flex-end;
+            appearance: none;
+            border: 0;
+            margin: 0;
+            padding: 6px 0;
+            background: transparent;
+            color: #fff;
+            font-family: var(--font-family-alt);
+            font-size: 15px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:focus-visible {
+                outline: 2px solid #fff;
+                outline-offset: 5px;
+            }
+        }
+
+        &__menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 18px;
+
+            a {
+                position: relative;
+                display: inline-block;
+                color: #fff;
+                font-family: var(--font-family-alt);
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 0.2px;
+                line-height: 1.05;
+                padding-bottom: 9px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 1px;
+                    background: #fff;
+                    transform: scaleX(0);
+                    transform-origin: left center;
+                    transition: transform .25s ease;
+                }
+
+                &:hover::after,
+                &:focus-visible::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    &.is-mobile-menu-open {
+        .spc-mobile-nav-backdrop {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .spc-mobile-nav {
+            transform: translateX(0);
+        }
+    }
+
+    @include mq.media('>=1025px') {
+        .spc-mobile-nav,
+        .spc-mobile-nav-backdrop {
+            display: none;
+        }
+    }
+}
+
+body.spc-mobile-menu-open {
+    overflow: hidden;
+}

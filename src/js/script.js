@@ -1,5 +1,6 @@
 
 import ScrollToTop from './classes/ScrollToTop';
+import MobileMenu from './classes/MobileMenu';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.querySelector('.spc-x');
@@ -10,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 200
     });
     scrollToTop.init();
+
+    const mobileMenu = new MobileMenu();
+    mobileMenu.init();
 
     // =========================================================
     // Add body class for WordPress header overlay styling

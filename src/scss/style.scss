@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
 @include meta.load-css('./components/utils/_utils.scss');
 
 @include meta.load-css('./components/layout/_all.scss');

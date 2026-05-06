@@ -11,6 +11,92 @@ function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = 
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var MobileMenu = /*#__PURE__*/function () {
+  function MobileMenu() {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    _classCallCheck(this, MobileMenu);
+    this.header = options.header || document.querySelector('#masthead');
+    this.toggleButton = null;
+    this.mobileNav = null;
+    this.closeButton = null;
+    this.backdrop = null;
+    this.isOpen = false;
+    this.onToggle = this.handleToggle.bind(this);
+    this.onClose = this.close.bind(this);
+    this.onKeyDown = this.handleKeyDown.bind(this);
+  }
+  return _createClass(MobileMenu, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+      if (!this.header) return;
+      this.toggleButton = this.header.querySelector('.spc-header__menu-toggle');
+      this.mobileNav = this.header.querySelector('.spc-mobile-nav');
+      this.closeButton = this.header.querySelector('.spc-mobile-nav__close');
+      this.backdrop = this.header.querySelector('.spc-mobile-nav-backdrop');
+      if (!this.toggleButton || !this.mobileNav || !this.closeButton || !this.backdrop) return;
+      this.toggleButton.addEventListener('click', this.onToggle);
+      this.closeButton.addEventListener('click', this.onClose);
+      this.backdrop.addEventListener('click', this.onClose);
+      this.mobileNav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', _this.onClose);
+      });
+      document.addEventListener('keydown', this.onKeyDown);
+    }
+  }, {
+    key: "handleToggle",
+    value: function handleToggle() {
+      if (this.isOpen) {
+        this.close();
+        return;
+      }
+      this.open();
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      this.isOpen = true;
+      this.header.classList.add('is-mobile-menu-open');
+      document.body.classList.add('spc-mobile-menu-open');
+      this.toggleButton.setAttribute('aria-expanded', 'true');
+      this.mobileNav.setAttribute('aria-hidden', 'false');
+      this.closeButton.focus();
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      if (!this.isOpen) return;
+      this.isOpen = false;
+      this.header.classList.remove('is-mobile-menu-open');
+      document.body.classList.remove('spc-mobile-menu-open');
+      this.toggleButton.setAttribute('aria-expanded', 'false');
+      this.mobileNav.setAttribute('aria-hidden', 'true');
+      this.toggleButton.focus();
+    }
+  }, {
+    key: "handleKeyDown",
+    value: function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        this.close();
+      }
+    }
+  }]);
+}();
+var _default = exports["default"] = MobileMenu;
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var ScrollToTop = /*#__PURE__*/function () {
   function ScrollToTop() {
     var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -113,10 +199,11 @@ var ScrollToTop = /*#__PURE__*/function () {
 }();
 var _default = exports["default"] = ScrollToTop;
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 var _ScrollToTop = _interopRequireDefault(require("./classes/ScrollToTop"));
+var _MobileMenu = _interopRequireDefault(require("./classes/MobileMenu"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.querySelector('.spc-x');
@@ -126,6 +213,8 @@ document.addEventListener('DOMContentLoaded', function () {
     threshold: 200
   });
   scrollToTop.init();
+  var mobileMenu = new _MobileMenu["default"]();
+  mobileMenu.init();
 
   // =========================================================
   // Add body class for WordPress header overlay styling
@@ -226,5 +315,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-},{"./classes/ScrollToTop":1}]},{},[2])
+},{"./classes/MobileMenu":1,"./classes/ScrollToTop":2}]},{},[3])
 

@@ -7,16 +7,14 @@
 .spc-x {
     .hero {
         position: relative;
-        height: 92vh;
         min-height: 680px;
         overflow: hidden;
         color: #fff;
         display: flex;
         align-items: flex-end;
         padding: 60px 0 70px;
-
         margin-top: -60px;
-        padding-top: 280px;
+        padding-top: calc(var(--header-height) + 70px);
         min-height: 880px;
 
         .wrap {
@@ -44,10 +42,9 @@
         @include mq.media('<=920px') {
             height: auto;
             min-height: 640px;
-            padding: 80px 24px 50px;
-
             margin-top: 0;
-            padding-top: 60px;
+            padding: 60px 24px 50px;
+            padding-top: calc(var(--mobile-header-height) + 24px);
             min-height: auto;
         }
 

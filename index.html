@@ -12,6 +12,69 @@
     <script src="./assets/js/script.min.js" defer></script>
 </head>
 <body>
+    <header id="masthead" class="spc-x-masthead">
+        <div class="spc-header spc-header--desktop">
+            <div class="wrap">
+                <a href="https://sailpercabin.com/" class="spc-header__logo-link" aria-label="Sail Per Cabin home">
+                    <img
+                        class="spc-header__logo"
+                        src="./assets/media/branding/logo-header.webp"
+                        srcset="./assets/media/branding/logo-header.webp 1x, ./assets/media/branding/logo-header@2x.webp 2x"
+                        alt="Sail Per Cabin"
+                        loading="eager"
+                        decoding="async"
+                    >
+                </a>
+                <nav class="spc-header__nav" aria-label="Primary">
+                    <ul class="spc-header__menu">
+                        <li><a href="https://sailpercabin.com/about/">About</a></li>
+                        <li><a href="https://sailpercabin.com/blog/">Blog</a></li>
+                        <li><a href="https://sailpercabin.com/contact-us/">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="spc-header spc-header--mobile">
+            <div class="wrap">
+                <a href="https://sailpercabin.com/" class="spc-header__logo-link" aria-label="Sail Per Cabin home">
+                    <img
+                        class="spc-header__logo spc-header__logo--mobile"
+                        src="./assets/media/branding/logo-mobile.webp"
+                        srcset="./assets/media/branding/logo-mobile.webp 1x, ./assets/media/branding/logo-mobile@2x.webp 2x"
+                        alt="Sail Per Cabin"
+                        loading="eager"
+                        decoding="async"
+                    >
+                </a>
+                <button
+                    class="spc-header__menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="spc-mobile-nav"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <button class="spc-mobile-nav-backdrop" type="button" aria-label="Close navigation menu"></button>
+
+        <aside id="spc-mobile-nav" class="spc-mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+            <button class="spc-mobile-nav__close" type="button" aria-label="Close navigation menu">Close</button>
+            <nav aria-label="Mobile primary">
+                <ul class="spc-mobile-nav__menu">
+                    <li><a href="https://sailpercabin.com/about/">About</a></li>
+                    <li><a href="https://sailpercabin.com/blog/">Blog</a></li>
+                    <li><a href="https://sailpercabin.com/contact-us/">Contact Us</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
     <main class="spc-x">
 
         <!-- HERO -->

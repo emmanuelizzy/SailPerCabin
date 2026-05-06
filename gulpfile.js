@@ -130,7 +130,7 @@ function zipFiles(done) {
     const folderName = exportManifest.name;
     const zipFilename = `${exportManifest.name}-${version}.zip`;
 
-    return gulp.src(filesToZip, { base: './' })
+    return gulp.src(filesToZip, { base: './', encoding: false })
         // Prefix all files with the folder name
         .pipe(through2.obj(function(file, enc, cb) {
             if (file.relative) {
