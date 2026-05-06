@@ -726,6 +726,191 @@ body.spc-mobile-menu-open {
   overflow: hidden;
 }
 /* =========================================================
+   FOOTER
+   ========================================================= */
+.spc-footer {
+  background: var(--footer-background-color);
+  color: var(--footer-text-color);
+  font-size: 16px;
+  line-height: 26px;
+  padding: 84px 0 40px;
+}
+.spc-footer .wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.spc-footer a {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.spc-footer a:hover, .spc-footer a:focus-visible {
+  color: var(--paper);
+}
+.spc-footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 34px;
+}
+.spc-footer__logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.spc-footer__logo {
+  width: auto;
+  height: 82px;
+  display: block;
+}
+.spc-footer__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.spc-footer__menu li {
+  padding-top: 0.9em;
+  padding-inline: 0.9em;
+}
+.spc-footer__menu a {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-family-alt);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  padding-bottom: 4px;
+}
+.spc-footer__menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--paper);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+.spc-footer__menu a:hover::after, .spc-footer__menu a:focus-visible::after {
+  transform: scaleX(1);
+}
+.spc-footer__divider {
+  height: 1px;
+  width: 100%;
+  background: var(--footer-divider-color);
+  margin-bottom: 36px;
+}
+.spc-footer__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 42px;
+  align-items: start;
+  margin-bottom: 26px;
+}
+.spc-footer__details {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+.spc-footer__details p {
+  margin: 0;
+}
+.spc-footer__tagline-wrap {
+  text-align: right;
+}
+.spc-footer__tagline {
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--font-family-base);
+  font-size: 22px;
+  line-height: 1.2em;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+.spc-footer__tagline-btext {
+  color: var(--footer-text-color);
+}
+.spc-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-family-alt);
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 34px;
+  font-weight: 300;
+}
+.spc-footer__legal span {
+  color: var(--footer-text-color);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.spc-footer__copyright {
+  margin: 0;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 26px;
+}
+@media (max-width: 920px) {
+  .spc-footer {
+    padding: 56px 0 34px;
+  }
+  .spc-footer__top {
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .spc-footer__logo {
+    height: 102px;
+  }
+  .spc-footer__nav {
+    display: none;
+  }
+  .spc-footer__divider {
+    margin-bottom: 34px;
+  }
+  .spc-footer__content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 34px;
+    text-align: center;
+  }
+  .spc-footer__details {
+    max-width: 16.5em;
+    margin: 0 auto;
+  }
+  .spc-footer__details p:last-child a {
+    display: inline;
+  }
+  .spc-footer__tagline-wrap {
+    text-align: center;
+  }
+  .spc-footer__tagline-wrap::before {
+    display: none;
+  }
+  .spc-footer__tagline {
+    text-wrap: balance;
+  }
+  .spc-footer__legal {
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+  .spc-footer__copyright {
+    max-width: 25ch;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+/* =========================================================
    ANIMATIONS & TRANSITIONS
    ========================================================= */
 .spc-x .reveal {
